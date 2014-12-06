@@ -1,0 +1,6 @@
+#!/bin/bash
+rm -fR tmp-build
+mkdir tmp-build
+javac -d tmp-build/ `find src/ | grep ".java"`
+jar cf releases/amyboyd-java-utils-r`ls -1 releases | wc -l`.jar -C tmp-build ./
+rm -fr tmp-build/
